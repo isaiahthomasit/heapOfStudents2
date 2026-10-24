@@ -68,7 +68,6 @@ void Student::printStudent(){
   std::cout << firstName << " " << lastName << std::endl;
 
   address->printAddress();
-  std::cout << std::endl;
   
   std::cout << "DOB: ";
   dob->printDate();
