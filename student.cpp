@@ -11,7 +11,7 @@ Student::Student(){
 }
 
 void Student::init(std::string studentString){
-  std::stringsstream ss(studentString);
+  std::stringstream ss(studentString);
 
   // student name
 
