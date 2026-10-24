@@ -77,4 +77,10 @@ void Student::printStudent(){
 
 }
 
+std::string Student::getFirstName(){
+  return firstName;
+}
 
+std::string Student::getLastName(){
+  return lastName;
+}
