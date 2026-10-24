@@ -39,14 +39,35 @@ void showStudentNames(std::vector<Student*>& students){
   }
 }
 
+// findStudent function
+void findStudent(std::vector<Student*>& students){
+  std::string searchName;
+  std::cout << "Enter a last name to search for: ";
+  std::cin >>  searchName;
+
+  bool found = false;
+
+  for (Student* student : students){
+    if (student->getLastName().find(searchName) != std::string::npos){
+      found = true;
+      student->printStudent();
+    }
+  }
+
+  if (found == false){
+    std::cout << "No students matching: " << searchName << std::endl; 
+  }
+}
+
 
 // main
 int main(){
   std::vector<Student*> students;
 
   loadStudents(students);
-  printStudents(students);
-  
+  //printStudents(students);
+  findStudent(students);
+
   for (Student* student : students){
     delete student;
   }
