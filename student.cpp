@@ -69,8 +69,11 @@ void Student::printStudent(){
 
   address->printAddress();
   std::cout << std::endl;
-
+  
+  std::cout << "DOB: ";
   dob->printDate();
+
+  std::cout << "Grad: ";
   expectedGrad->printDate();
 
   std::cout << "Credits: " << creditHours << std::endl;
@@ -84,3 +87,4 @@ std::string Student::getFirstName(){
 std::string Student::getLastName(){
   return lastName;
 }
+
