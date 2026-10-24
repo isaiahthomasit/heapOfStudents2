@@ -51,6 +51,7 @@ void findStudent(std::vector<Student*>& students){
     if (student->getLastName().find(searchName) != std::string::npos){
       found = true;
       student->printStudent();
+      std::cout << std::endl;
     }
   }
 
