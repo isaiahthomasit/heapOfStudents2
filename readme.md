@@ -2,42 +2,42 @@
 
 classDiagram
 
-class Student{
-  # str studentString
-  # str firstName
-  # str lastName
+class Student {
+  # string studentString
+  # string firstName
+  # string lastName
   # Date* dob
   # Date* expectedGrad
-  # Address* Address
+  # Address* address
   # int creditHours
   + Student()
   + ~Student()
-  + void init(studentString)
-  + void printStudent() 
+  + void init(string studentString)
+  + void printStudent()
+  + string getFirstName()
+  + string getLastName()
 }
 
-class Date{
-  # str dateString
+class Date {
   # int month
   # int day
   # int year
   + Date()
-  + void init(dateString)
+  + void init(string dateString)
   + void printDate()
 }
 
-class Address{
-  # str street
-  # str city
-  # str state
-  # str zip
+class Address {
+  # string street
+  # string city
+  # string state
+  # string zip
   + Address()
-  + void init(street, city, state, zip)
+  + void init(string street, string city, string state, string zip)
   + void printAddress()
 }
 
 Student --> Date
-
 Student --> Address
 
 ```
