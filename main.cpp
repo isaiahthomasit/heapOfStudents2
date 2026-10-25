@@ -30,7 +30,7 @@ void printStudents(std::vector<Student*>& students){
     student->printStudent();
     std::cout << "__________________________________" << std::endl;
   }
-}
+} 
 
 // showStudentNames function
 void showStudentNames(std::vector<Student*>& students){
@@ -75,12 +75,22 @@ std::string menu(){
   return choice;
 }
 
+// delStudents function
+void delStudents(std::vector<Student*>& students){
+  for (Student* student : students){
+    delete student;
+  }
+
+  students.clear();
+}
+
 
 // main
 int main(){
   std::vector<Student*> students;
   loadStudents(students);
-
+  
+  // menu
   std::string choice;
   while (choice != "0"){
     choice = menu();
@@ -102,13 +112,7 @@ int main(){
     }
   }
 
-  for (Student* student : students){
-    delete student;
-  }
-
+  delStudents(students); 
   return 0;
 }
-
-
-
 
