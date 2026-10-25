@@ -95,7 +95,7 @@ Student():
   initialize address to nullptr
 
 Student::init(studentString):
-  initialize students.csv as a stringstream
+  initialize a stringstrema using studentString
 
   read line up to the first comma and assign chunk to variable firstName
   continue line up to the next comma and assign chunk to variable lastName
@@ -128,20 +128,21 @@ Student::init(studentString):
   initialize creditString variable as string
   finish the end of line up and assign chunk to variable creditString
 
-  convert creditString to an integer by assigning it to creditHours
+  convert creditString to an integer
+  assign creditString to creditHours
 
 ~Student():
-  deallocate heap memory of dob
-  deallocate heap memory of expectedGrad
-  deallocate heap memory of address
+  free the Date object pointed to by dob
+  free the Date object pointed to by expectedGrad
+  free the Address object pointed to by address
 
 printStudent():
-  print student first name + last name
+  print student first name + space + last name
 
   print student address
 
-  print student date of birth with "DOB:" label
-  print student graduation date with "Grad:" label
+  printDate() with "DOB:" label
+  printDate() with "Grad:" label
 
   print student total credits with "Credits:" label
 
