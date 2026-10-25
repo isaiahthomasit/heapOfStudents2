@@ -87,6 +87,71 @@ Date::printDate():
   endl
 
 ```
+# Student class
+```
+Student():
+  initialize dob to nullptr
+  initialize expectedGrad to nullptr
+  initialize address to nullptr
+
+Student::init(studentString):
+  initialize students.csv as a stringstream
+
+  read line up to the first comma and assign chunk to variable firstName
+  continue line up to the next comma and assign chunk to variable lastName
+
+  initialize street variable as string
+  initialize city variable as string
+  initialize state variable as string
+  initialize zip variable as string
+
+  continue line up to the next comma and assign variable street
+  continue line up to the next comma and assign variable city
+  continue line up to the next comma and assign variable state
+  continue line up to the next comma and assign variable zip
+
+  allocate heap memory for Address and assign to address pointer
+  initialize address pointer with street, city, state, and zip
+
+  initialize dobString variable as string
+  initialize gradString variable as string
+
+  continue line up to the next comma and assign chunk to variable dobString
+  continue line up to the next comma and assign chunk to variable gradString
+
+  allocate heap memory for Date and assign to dob pointer
+  initialize dob pointer with dobString
+
+  allocate heap memory for Date and assign to expectedGrad pointer
+  initialize expectedGrad pointer with gradString
+
+  initialize creditString variable as string
+  finish the end of line up and assign chunk to variable creditString
+
+  convert creditString to an integer by assigning it to creditHours
+
+~Student():
+  deallocate heap memory of dob
+  deallocate heap memory of expectedGrad
+  deallocate heap memory of address
+
+printStudent():
+  print student first name + last name
+
+  print student address
+
+  print student date of birth with "DOB:" label
+  print student graduation date with "Grad:" label
+
+  print student total credits with "Credits:" label
+
+getFirstName():
+  return firstName
+
+getLastName():
+  return lastName
+
+```
 # main Function
 ```
 main():
