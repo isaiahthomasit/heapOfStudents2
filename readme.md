@@ -43,29 +43,26 @@ Student --> Address
 ```
 # Address Class
 ``` 
-include header
-
-Address::init(street, city, state, and zip as strings):
-  assign str 'street' to 'street' in Address class
-  assign str 'city' to 'city' in Address class
-  assign str 'state' to 'state' in Address class
-  assign str 'zip' to 'zip' in Address class
+Address::init(street, city, state, zip):
+  assign street to the street field
+  assign city to the city field
+  assign state to the state field
+  assign zip to the zip field
 
 printAddress():
-  print full address (street, city, state, zip) in correct format
-  endl
+  print street, city, state, and zip in the correct format
 
 ```
 # Date Class
 ```
 Date::init(dateString):
-  create string stream for dateString
+  create a stringstream using dateString
   define each piece of dateString as string:
   define month piece as monthString
   define day piece as dayString
   define year piece as yearString
 
- use getline + string steam + '/' delimiter to separate pieces
+ use getline + string stream + '/' delimiter to separate pieces
  read dateString up to first '/' to get month
  read dateString up to next '/' to get day
  read rest of dateString to get year
@@ -95,7 +92,7 @@ Student():
   initialize address to nullptr
 
 Student::init(studentString):
-  initialize a stringstrema using studentString
+  initialize a stringstream using studentString
 
   read line up to the first comma and assign chunk to variable firstName
   continue line up to the next comma and assign chunk to variable lastName
@@ -129,7 +126,7 @@ Student::init(studentString):
   finish the end of line up and assign chunk to variable creditString
 
   convert creditString to an integer
-  assign creditString to creditHours
+  store resulting integer in creditHours
 
 ~Student():
   free the Date object pointed to by dob
@@ -141,8 +138,8 @@ printStudent():
 
   print student address
 
-  printDate() with "DOB:" label
-  printDate() with "Grad:" label
+  print "DOB:" and the date of birth using dob
+  print "Grad:" and the expected graduation date using expectedGrad
 
   print student total credits with "Credits:" label
 
@@ -156,27 +153,27 @@ getLastName():
 # main Function
 ```
 main():
-  create empty vector of student pointers
-  load students.csv into vector
+  create an empty vector of Student pointers
+  load students.csv into the vector
 
-  create variable 'choice' as an empty string
+  initialize choice as an empty string
 
-  while choice is not 0:
-    print menu + receive user choice input
+  while choice is not "0":
+    display the menu and read the user's choice
 
-    if choice is 1:
-      print all students names
+    if choice is "1":
+      print all student names
 
-    else if choice is 2:
+    else if choice is "2":
       print all student data
 
-    else if choice is 3:
-      search for student by last name
+    else if choice is "3":
+      search for a student by last name
 
-    else if choice is not 0:
-      output invalid message
+    else if choice is not "0":
+      print an invalid-choice message
 
-  free all student objects + clear vector
+  delete all Student objects and clear the vector
   return 0
 
 ```
@@ -217,16 +214,16 @@ printStudents(students):
 ```
 # findStudent Function
 ```
-findStudents(students):
+findStudent(students):
   prompt user for last name
   read prompt
-  found == false
+  found = false
 
   for each Student pointer in vector
-    check if any student's last name contains anything from the user input
+    check whether the student's last name contains the search text
 
     if there is a match:
-      found == ture
+      found = true
       print student data
       print blank line
 
