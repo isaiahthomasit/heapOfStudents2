@@ -60,14 +60,47 @@ void findStudent(std::vector<Student*>& students){
   }
 }
 
+// menu function
+std::string menu(){
+  std::string choice;
+
+  std::cout << "0) quit" << std::endl;
+  std::cout << "1) print all student names" << std::endl;
+  std::cout << "2) print all student data" << std::endl;
+  std::cout << "3) find a student" << std::endl;
+  std::cout << "please choose 0-3: ";
+  std::cin >> choice;
+
+
+  return choice;
+}
+
 
 // main
 int main(){
   std::vector<Student*> students;
-
   loadStudents(students);
-  //printStudents(students);
-  findStudent(students);
+
+  std::string choice;
+  while (choice != "0"){
+    choice = menu();
+
+    if (choice == "1"){
+      showStudentNames(students);
+    }
+
+    else if (choice == "2"){
+      printStudents(students);
+    }
+
+    else if (choice == "3"){
+      findStudent(students);
+    }
+
+    else if (choice != "0"){
+      std::cout << "invalid choice. please enter 0-3" << std::endl;
+    }
+  }
 
   for (Student* student : students){
     delete student;
